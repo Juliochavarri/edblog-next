@@ -1,12 +1,13 @@
 const { default: Header } = require("../components/sections/Header");
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
 
-function MyApp({ Component, pageProps }) {
+function App({ Component, pageProps }) {
   return (
     <>
-      <Header></Header>
+      <Header />
       <Component {...pageProps} />
     </>
   )
 }
 
-export default MyApp
+export default App
