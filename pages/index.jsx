@@ -1,15 +1,35 @@
-import Head from 'next/head'
+import {NextSeo} from 'next-seo'
 import fetch from 'node-fetch'
 import Post from '../components/blog/Post'
 
 const Home = ({ posts }) => (
   <div>
-    <Head>
-      <title>Home | {process.env.SITE_NAME}</title>
-    </Head>
+    <NextSeo
+      title="Bienvenido a EDblog"
+      description="EDblog es una creacion del curso de Next en EDteam"
+      openGraph={{
+        url: "https://ed.team",
+        title: "Bienvenido a EDblog",
+        description: "EDblog es una creacion del curso de Next en EDteam",
+        images: [
+          {
+            url: "https://ed.team/images/algo.jpg",
+            width: 1280,
+            height: 720,
+            alt: "Foto de perfil de EDteam"
+          }
+        ],
+        site_name: "EDblog"
+      }}
+      twitter={{
+        handle: "@edteamlat",
+        site: "@edteamlat",
+        cardType: "summary_large_image"
+      }}
+    />
     <main>
       <h1>Edblog</h1>
-      <div className="container-fluid row justify-content-center">
+      <div className="ed-grid m-grid-3 row-gap">
         {
           posts.map(p => <Post key={p.id} post={p} />)
         }

@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import React from 'react'
 import fetch from 'node-fetch'
+import Comments from '../../components/blog/comments'
 
 const PostBlog = ({post}) => (
   <div>
@@ -13,6 +14,7 @@ const PostBlog = ({post}) => (
             <p>{post.body}</p>
         </div>
     </main>
+    <Comments id={post.id} />
   </div>
 )
 

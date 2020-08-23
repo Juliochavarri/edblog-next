@@ -8,10 +8,13 @@
     "start": "next start"
   },
   "dependencies": {
+    "axios": "^0.20.0",
     "bootstrap": "^4.5.2",
     "ed-grid": "^3.0.0",
     "edteam-style-guides": "^0.0.68",
     "next": "9.5.2",
+    "next-seo": "^4.7.3",
+    "node-sass": "^4.14.1",
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "sass": "^1.26.10"

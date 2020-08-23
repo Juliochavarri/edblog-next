@@ -1,14 +1,26 @@
-import React from 'react'
-import Link from 'next/link'
+import React,  { createRef } from "react"
+import Link from "next/link"
+
+const menu = createRef()
+const toggleMenu = () => {
+  menu.current.classList.toggle("show")
+}
 
 const MainMenu = () => (
-    <nav className="navbar navbar-expand-lg navbar-light bg-light">
-        <ul className="navbar-nav mr-auto">
-            <li className="nav-item"><Link href="/"><a className="nav-link">Inicio</a></Link></li>
-            <li className="nav-item"><Link href="/about"><a className="nav-link">Acerca de</a></Link></li>
-            <li className="nav-item"><Link href="/contact"><a className="nav-link">contacto</a></Link></li>
-        </ul>
+  <div className="s-grid-1 lg-cols-3 s-cross-center s-main-end header-links">
+    <nav className="main-menu" ref={menu}>
+      <ul>
+        <li> <Link href="/"><a>Inicio</a></Link> </li>
+        <li> <Link href="/about"><a>Acerca de</a></Link> </li>
+        <li> <Link href="/contact"><a>Contacto</a></Link> </li>
+      </ul>
     </nav>
+    <div
+      className="main-menu-toggle to-l"
+      onClick={() =>  toggleMenu()}
+    ></div>
+  </div>
+
 )
 
 export default MainMenu
